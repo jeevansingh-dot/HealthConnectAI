@@ -1,0 +1,613 @@
+/* =========================================
+   HEALTHCONNECT AI - DASHBOARD
+   Professional Hospital Red Theme
+========================================= */
+
+.dashboard {
+  min-height: 100vh;
+  display: flex;
+  background: #fdf7f7;
+  color: #292f35;
+}
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+
+  background: #ffffff;
+
+  border-right: 1px solid #eadede;
+
+  padding: 25px 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 3px 0 15px rgba(100, 30, 30, 0.03);
+}
+
+/* BRAND */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 5px 10px 30px;
+}
+
+.brand-icon {
+  width: 42px;
+  height: 42px;
+
+  background: #c62828;
+
+  color: white;
+
+  border-radius: 11px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+
+  box-shadow: 0 5px 14px rgba(198, 40, 40, 0.18);
+}
+
+.brand h2 {
+  font-size: 18px;
+  color: #292f35;
+  font-weight: 700;
+}
+
+.brand span {
+  color: #c62828;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.nav-item {
+  width: 100%;
+
+  border: none;
+  background: transparent;
+
+  color: #6f777d;
+
+  padding: 13px 15px;
+
+  border-radius: 10px;
+
+  text-align: left;
+
+  font-size: 14px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.nav-item span {
+  width: 22px;
+  font-size: 17px;
+  text-align: center;
+}
+
+.nav-item:hover {
+  background: #fff3f3;
+  color: #c62828;
+  transform: translateX(2px);
+}
+
+.nav-item.active {
+  background: #fee7e7;
+  color: #b42328;
+  font-weight: 600;
+}
+
+/* =========================================
+   LOGOUT
+========================================= */
+
+.logout-btn {
+  margin-top: auto;
+
+  border: none;
+  background: transparent;
+
+  color: #6f777d;
+
+  padding: 13px 15px;
+
+  text-align: left;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  border-radius: 10px;
+
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #fff3f3;
+  color: #c62828;
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.main-content {
+  flex: 1;
+
+  padding: 30px 35px;
+
+  overflow-x: hidden;
+}
+
+/* =========================================
+   TOPBAR
+========================================= */
+
+.topbar {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 30px;
+}
+
+.topbar h1 {
+  font-size: 28px;
+
+  color: #292f35;
+
+  margin-bottom: 5px;
+
+  font-weight: 700;
+}
+
+.topbar p {
+  color: #777d83;
+  font-size: 14px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: #c62828;
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+
+  box-shadow: 0 5px 14px rgba(198, 40, 40, 0.16);
+}
+
+.user-info strong {
+  display: block;
+
+  color: #292f35;
+
+  font-size: 14px;
+}
+
+.user-info small {
+  color: #777d83;
+
+  font-size: 12px;
+}
+
+/* =========================================
+   WELCOME CARD
+========================================= */
+
+.welcome-card {
+  background: linear-gradient(
+    135deg,
+    #9f1d20,
+    #c62828
+  );
+
+  border-radius: 18px;
+
+  padding: 30px;
+
+  color: white;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  min-height: 210px;
+
+  margin-bottom: 35px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 12px 30px rgba(159, 29, 32, 0.16);
+}
+
+.welcome-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  right: -80px;
+  top: -100px;
+}
+
+.welcome-label {
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  opacity: 0.85;
+}
+
+.welcome-card h2 {
+  font-size: 28px;
+
+  margin: 10px 0;
+
+  font-weight: 700;
+}
+
+.welcome-card p {
+  max-width: 550px;
+
+  opacity: 0.9;
+
+  line-height: 1.6;
+}
+
+.primary-btn {
+  margin-top: 20px;
+
+  background: white;
+
+  color: #b42328;
+
+  border: none;
+
+  padding: 11px 20px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition: 0.2s;
+}
+
+.primary-btn:hover {
+  background: #fff7f7;
+
+  transform: translateY(-1px);
+}
+
+.welcome-icon {
+  font-size: 100px;
+
+  opacity: 0.13;
+
+  margin-right: 40px;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+/* =========================================
+   SECTION
+========================================= */
+
+.section {
+  margin-bottom: 35px;
+}
+
+.section-heading {
+  margin-bottom: 18px;
+}
+
+.section-heading h2 {
+  color: #292f35;
+
+  font-size: 20px;
+
+  font-weight: 700;
+}
+
+.section-heading p {
+  color: #777d83;
+
+  font-size: 13px;
+
+  margin-top: 4px;
+}
+
+/* =========================================
+   ACTION CARDS
+========================================= */
+
+.action-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 18px;
+}
+
+.action-card {
+  background: #ffffff;
+
+  padding: 22px;
+
+  border-radius: 15px;
+
+  border: 1px solid #eadede;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.action-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #e5bebe;
+
+  box-shadow:
+    0 12px 28px rgba(100, 30, 30, 0.08);
+}
+
+.action-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff1f1;
+
+  border-radius: 12px;
+
+  font-size: 25px;
+
+  margin-bottom: 15px;
+}
+
+.action-card h3 {
+  color: #292f35;
+
+  font-size: 16px;
+
+  margin-bottom: 8px;
+
+  font-weight: 650;
+}
+
+.action-card p {
+  color: #777d83;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  min-height: 60px;
+}
+
+.action-card span {
+  display: inline-block;
+
+  margin-top: 12px;
+
+  color: #c62828;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+/* =========================================
+   STATS
+========================================= */
+
+.stats-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.stat-card {
+  background: #ffffff;
+
+  border: 1px solid #eadede;
+
+  padding: 20px;
+
+  border-radius: 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  transition: 0.2s;
+}
+
+.stat-card:hover {
+  border-color: #e5bebe;
+
+  box-shadow:
+    0 8px 22px rgba(100, 30, 30, 0.06);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+
+  background: #fff0f0;
+
+  border-radius: 12px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  font-size: 22px;
+}
+
+.stat-card span {
+  display: block;
+
+  color: #777d83;
+
+  font-size: 12px;
+
+  margin-bottom: 5px;
+}
+
+.stat-card strong {
+  color: #292f35;
+
+  font-size: 20px;
+
+  font-weight: 700;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .action-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 750px) {
+
+  .sidebar {
+    width: 70px;
+
+    padding: 20px 10px;
+  }
+
+  .brand div:not(.brand-icon),
+  .brand h2,
+  .brand span,
+  .logout-btn {
+    display: none;
+  }
+
+  .nav-item {
+    font-size: 0;
+
+    justify-content: center;
+
+    padding: 13px 10px;
+  }
+
+  .nav-item span {
+    font-size: 18px;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .welcome-icon {
+    display: none;
+  }
+
+  .action-grid,
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .topbar {
+    align-items: flex-start;
+  }
+
+  .topbar h1 {
+    font-size: 23px;
+  }
+
+  .user-info small {
+    display: none;
+  }
+
+  .welcome-card {
+    padding: 24px;
+
+    min-height: 190px;
+  }
+
+  .welcome-card h2 {
+    font-size: 23px;
+  }
+
+}

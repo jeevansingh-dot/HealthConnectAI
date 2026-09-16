@@ -1,0 +1,183 @@
+:root {
+  --text: #777d83;
+  --text-h: #292f35;
+
+  --bg: #fdf7f7;
+  --border: #eadede;
+
+  --code-bg: #fff0f0;
+
+  --accent: #c62828;
+  --accent-bg: rgba(198, 40, 40, 0.08);
+  --accent-border: rgba(198, 40, 40, 0.35);
+
+  --social-bg: rgba(255, 240, 240, 0.6);
+
+  --shadow:
+    rgba(143, 29, 34, 0.08) 0 10px 15px -3px,
+    rgba(0, 0, 0, 0.04) 0 4px 6px -2px;
+
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 16px/145% var(--sans);
+  letter-spacing: 0.18px;
+
+  color-scheme: light;
+
+  color: var(--text);
+  background: var(--bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base */
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* React Root */
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: 100svh;
+  box-sizing: border-box;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading);
+  color: var(--text-h);
+}
+
+h1,
+h2 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 40px;
+  letter-spacing: -1px;
+  margin: 32px 0;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+}
+
+h3 {
+  font-size: 20px;
+  margin: 0 0 8px;
+}
+
+/* Paragraph */
+p {
+  margin: 0;
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ad2024;
+}
+
+/* Code */
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 14px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+/* Inputs */
+input,
+select,
+textarea {
+  font-family: var(--sans);
+}
+
+/* Buttons */
+button {
+  font-family: var(--sans);
+}
+
+/* Selection */
+::selection {
+  background: #fee7e7;
+  color: #9f1d20;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fdf7f7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dfcaca;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c62828;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 34px;
+    margin: 24px 0;
+  }
+
+  h2 {
+    font-size: 21px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  h1 {
+    font-size: 28px;
+    letter-spacing: -0.5px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}

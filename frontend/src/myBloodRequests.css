@@ -1,0 +1,291 @@
+.my-requests-page {
+  min-height: 100vh;
+  background: #f5f7fb;
+  padding: 30px 50px;
+  color: #1f2937;
+}
+
+.my-requests-header {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.my-requests-header > div {
+  flex: 1;
+}
+
+.my-requests-header h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.my-requests-header p {
+  margin-top: 7px;
+  color: #6b7280;
+}
+
+.back-btn {
+  border: none;
+  background: white;
+  color: #374151;
+  padding: 11px 16px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.back-btn:hover {
+  background: #eef2f7;
+}
+
+.new-request-btn {
+  border: none;
+  background: #d62828;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.new-request-btn:hover {
+  background: #b91c1c;
+}
+
+.request-message {
+  background: #fff3f3;
+  color: #c62828;
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.request-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.request-summary > div {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+.request-summary span {
+  display: block;
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.request-summary strong {
+  font-size: 25px;
+}
+
+.my-request-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.my-request-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.07);
+  border: 1px solid #edf0f4;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.blood-group-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+}
+
+.blood-group-box strong {
+  color: #d62828;
+}
+
+.status-badge {
+  padding: 7px 13px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.status-badge.pending {
+  background: #fff4d6;
+  color: #9a6700;
+}
+
+.status-badge.matched {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.status-badge.fulfilled {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.status-badge.cancelled {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.hospital-section {
+  margin-bottom: 20px;
+}
+
+.hospital-section h2 {
+  margin-bottom: 7px;
+  font-size: 20px;
+}
+
+.hospital-section p {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.request-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.info-box {
+  background: #f8fafc;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.info-box span {
+  display: block;
+  color: #6b7280;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.info-box strong {
+  font-size: 17px;
+}
+
+.reason-section {
+  border-top: 1px solid #edf0f4;
+  padding-top: 18px;
+}
+
+.reason-section span {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.reason-section p {
+  margin-top: 7px;
+  line-height: 1.5;
+}
+
+.request-date {
+  margin-top: 18px;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.status-message {
+  margin-top: 18px;
+  padding: 12px;
+  border-radius: 9px;
+  background: #f8fafc;
+  color: #4b5563;
+  font-size: 13px;
+}
+
+.status-message span {
+  margin-right: 7px;
+}
+
+.empty-state {
+  background: white;
+  text-align: center;
+  padding: 70px 20px;
+  border-radius: 16px;
+  margin-top: 20px;
+}
+
+.empty-icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.loading-icon {
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+.empty-state h2 {
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.create-btn {
+  border: none;
+  background: #d62828;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .my-requests-page {
+    padding: 25px;
+  }
+
+  .my-request-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .request-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .my-requests-page {
+    padding: 18px;
+  }
+
+  .my-requests-header {
+    flex-wrap: wrap;
+  }
+
+  .my-requests-header > div {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  .request-summary {
+    grid-template-columns: 1fr 1fr;
+  }
+}
