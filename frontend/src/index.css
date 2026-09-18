@@ -1,22 +1,53 @@
+/* =========================================
+   DESIGN SYSTEM & GLOBAL BASE STYLES
+========================================= */
+
 :root {
+  /* Colors */
   --text: #777d83;
   --text-h: #292f35;
-
+  --text-subtle: #9a8f8f;
+  
   --bg: #fdf7f7;
+  --bg-card: #ffffff;
+  --bg-subtle: #fff8f8;
+  --bg-message: #f0faf3;
+  
   --border: #eadede;
+  --border-detail: #f0e2e2;
+  --border-message: #d5eadb;
 
   --code-bg: #fff0f0;
 
   --accent: #c62828;
+  --accent-hover: #9f1d20;
   --accent-bg: rgba(198, 40, 40, 0.08);
   --accent-border: rgba(198, 40, 40, 0.35);
 
   --social-bg: rgba(255, 240, 240, 0.6);
 
+  /* Status Badges & States */
+  --status-green: #218344;
+  --status-green-hover: #176c37;
+  --status-warning: #c27600;
+  --urgency-high-bg: #fee7e7;
+  --urgency-high-text: #b42327;
+  --urgency-med-bg: #fff5dc;
+  --urgency-med-text: #986b00;
+  --urgency-low-bg: #eaf7ee;
+  --urgency-low-text: #237044;
+
+  /* Elevation & Borders */
+  --radius-sm: 8px;
+  --radius-md: 9px;
+  --radius-lg: 15px;
+  --radius-pill: 20px;
+
   --shadow:
     rgba(143, 29, 34, 0.08) 0 10px 15px -3px,
     rgba(0, 0, 0, 0.04) 0 4px 6px -2px;
 
+  /* Typography */
   --sans: system-ui, "Segoe UI", Roboto, sans-serif;
   --heading: system-ui, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
@@ -25,18 +56,23 @@
   letter-spacing: 0.18px;
 
   color-scheme: light;
-
   color: var(--text);
   background: var(--bg);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Base */
+/* Box Sizing Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Base Body */
 body {
   margin: 0;
   min-width: 320px;
@@ -44,16 +80,15 @@ body {
   color: var(--text);
 }
 
-/* React Root */
+/* React Root Container */
 #root {
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
   min-height: 100svh;
-  box-sizing: border-box;
 }
 
-/* Headings */
+/* Typography Hierarchy */
 h1,
 h2,
 h3,
@@ -62,6 +97,7 @@ h5,
 h6 {
   font-family: var(--heading);
   color: var(--text-h);
+  margin: 0;
 }
 
 h1,
@@ -70,39 +106,45 @@ h2 {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   letter-spacing: -1px;
   margin: 32px 0;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
   line-height: 118%;
   letter-spacing: -0.24px;
   margin: 0 0 8px;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 1.25rem;
   margin: 0 0 8px;
 }
 
-/* Paragraph */
 p {
   margin: 0;
 }
 
-/* Links */
+/* Global Interactive Elements */
 a {
   color: var(--accent);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 a:hover {
-  color: #ad2024;
+  color: var(--accent-hover);
 }
 
-/* Code */
+button,
+input,
+select,
+textarea {
+  font-family: var(--sans);
+}
+
 code,
 .counter {
   font-family: var(--mono);
@@ -112,37 +154,24 @@ code,
 }
 
 code {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
 }
 
-/* Inputs */
-input,
-select,
-textarea {
-  font-family: var(--sans);
-}
-
-/* Buttons */
-button {
-  font-family: var(--sans);
-}
-
-/* Selection */
 ::selection {
-  background: #fee7e7;
+  background: var(--urgency-high-bg);
   color: #9f1d20;
 }
 
-/* Scrollbar */
+/* Custom Scrollbars */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #fdf7f7;
+  background: var(--bg);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -151,33 +180,326 @@ button {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #c62828;
+  background: var(--accent);
 }
 
-/* Tablet */
-@media (max-width: 1024px) {
-  :root {
-    font-size: 16px;
-  }
+/* =========================================
+   DONATION PAGE MODULE
+========================================= */
 
+.donation-page {
+  min-height: 100vh;
+  background: var(--bg);
+  padding: clamp(15px, 4vw, 30px) clamp(12px, 5vw, 40px);
+}
+
+/* Header Section */
+.donation-header {
+  max-width: 1100px;
+  margin: 0 auto 25px;
+}
+
+.back-btn {
+  border: none;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 0.875rem;
+  padding: 0;
+  margin-bottom: 20px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.back-btn:hover {
+  color: var(--accent-hover);
+}
+
+.donation-header h1 {
+  font-size: clamp(1.375rem, 3.5vw, 1.875rem);
+  margin-bottom: 6px;
+}
+
+.donation-header p {
+  color: var(--text);
+  font-size: clamp(0.813rem, 1.5vw, 1rem);
+}
+
+/* Alert Banner */
+.donation-message {
+  max-width: 1100px;
+  margin: 0 auto 20px;
+  padding: 13px 16px;
+  background: var(--bg-message);
+  color: var(--status-green);
+  border: 1px solid var(--border-message);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+}
+
+/* Fluid Responsive Grid */
+.request-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Request Cards */
+.request-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: clamp(16px, 3vw, 20px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.request-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.request-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.blood-badge {
+  background: var(--accent);
+  color: #ffffff;
+  padding: 8px 13px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.938rem;
+}
+
+.urgency {
+  padding: 6px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.688rem;
+  font-weight: 600;
+  background: var(--code-bg);
+  color: var(--text);
+}
+
+.urgency.emergency,
+.urgency.high {
+  background: var(--urgency-high-bg);
+  color: var(--urgency-high-text);
+}
+
+.urgency.medium {
+  background: var(--urgency-med-bg);
+  color: var(--urgency-med-text);
+}
+
+.urgency.low {
+  background: var(--urgency-low-bg);
+  color: var(--urgency-low-text);
+}
+
+.request-card h2 {
+  font-size: 1.063rem;
+  margin-bottom: 7px;
+}
+
+.hospital-address {
+  color: var(--text);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  min-height: 36px;
+}
+
+/* Two-column Detail Metric Grid */
+.request-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.request-details div {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-detail);
+  padding: clamp(9px, 2vw, 12px);
+  border-radius: var(--radius-md);
+}
+
+.request-details span,
+.reason-box span {
+  display: block;
+  color: var(--text-subtle);
+  font-size: 0.688rem;
+  margin-bottom: 5px;
+}
+
+.request-details strong {
+  color: var(--text-h);
+  font-size: clamp(0.813rem, 1.5vw, 0.875rem);
+}
+
+.request-details .status {
+  text-transform: capitalize;
+  color: var(--status-warning);
+}
+
+.reason-box {
+  border-top: 1px solid var(--border);
+  padding-top: 15px;
+}
+
+.reason-box p {
+  color: #5f666c;
+  font-size: 0.813rem;
+  line-height: 1.5;
+}
+
+.requester {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 15px;
+  border-top: 1px solid var(--border);
+}
+
+.requester-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--urgency-high-bg);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.requester strong {
+  display: block;
+  color: var(--text-h);
+  font-size: 0.813rem;
+}
+
+.requester small {
+  color: var(--text-subtle);
+  font-size: 0.688rem;
+}
+
+.response-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.accept-btn,
+.decline-btn {
+  border: none;
+  padding: 11px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.813rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.accept-btn {
+  background: var(--status-green);
+  color: #ffffff;
+}
+
+.accept-btn:hover {
+  background: var(--status-green-hover);
+}
+
+.decline-btn {
+  background: #f5f1f1;
+  color: #4f565c;
+  border: 1px solid var(--border);
+}
+
+.decline-btn:hover {
+  background: #eee5e5;
+}
+
+.request-status {
+  margin-top: 18px;
+  padding: 11px;
+  background: #f8f3f3;
+  color: #656d73;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  text-align: center;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+}
+
+/* Empty State fallback */
+.empty-state {
+  max-width: 1100px;
+  margin: 50px auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: clamp(30px, 6vw, 50px);
+  text-align: center;
+  color: var(--text);
+}
+
+.empty-icon {
+  font-size: 2.813rem;
+  margin-bottom: 15px;
+}
+
+.empty-state h2 {
+  color: var(--text-h);
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  font-size: 0.813rem;
+}
+
+/* =========================================
+   MEDIA QUERY OVERRIDES
+========================================= */
+
+@media (max-width: 1024px) {
   h1 {
-    font-size: 34px;
     margin: 24px 0;
   }
+}
 
-  h2 {
-    font-size: 21px;
+@media (max-width: 650px) {
+  h1 {
+    letter-spacing: -0.5px;
   }
 }
 
-/* Mobile */
-@media (max-width: 650px) {
-  h1 {
-    font-size: 28px;
-    letter-spacing: -0.5px;
+@media (max-width: 450px) {
+  .hospital-address {
+    min-height: auto;
   }
 
-  h2 {
-    font-size: 20px;
+  .response-actions {
+    gap: 8px;
+  }
+
+  .accept-btn,
+  .decline-btn {
+    padding: 10px 6px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .request-details,
+  .response-actions {
+    grid-template-columns: 1fr;
   }
 }
