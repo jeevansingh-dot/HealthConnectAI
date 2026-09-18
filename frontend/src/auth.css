@@ -270,6 +270,8 @@
   font-size: 14px;
 
   transition: all 0.2s ease;
+
+  box-sizing: border-box;
 }
 
 .input-group input::placeholder {
@@ -402,6 +404,8 @@
   font-size: 13px;
 
   color: #777d83;
+
+  flex-wrap: wrap;
 }
 
 .auth-footer button {
@@ -427,9 +431,21 @@
 }
 
 /* =================================
-   RESPONSIVE
+   RESPONSIVE (OPTIMIZED FOR ALL SCREENS)
 ================================= */
 
+/* Medium Laptops & Small Desktops (1200px and below) */
+@media (max-width: 1200px) {
+  .auth-left {
+    padding: 40px;
+  }
+
+  .brand-content h1 {
+    font-size: 36px;
+  }
+}
+
+/* Tablets & Mobile Stack Layout (900px and below) */
 @media (max-width: 900px) {
 
   .auth-page {
@@ -442,6 +458,19 @@
     min-height: auto;
 
     padding: 45px 25px;
+
+    border-right: none;
+
+    border-bottom: 1px solid #f3d7d7;
+  }
+
+  .brand-content {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .brand-icon {
+    margin: 0 auto 20px auto;
   }
 
   .brand-content h1 {
@@ -450,6 +479,8 @@
 
   .brand-content > p {
     font-size: 15px;
+
+    margin: 0 auto 20px auto;
   }
 
   .feature-list {
@@ -465,23 +496,82 @@
   }
 }
 
+/* Mobile Devices (550px and below) */
 @media (max-width: 550px) {
 
+  .auth-left {
+    padding: 35px 20px;
+  }
+
+  .brand-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 26px;
+    border-radius: 14px;
+    margin-bottom: 15px;
+  }
+
+  .brand-content h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .brand-content > p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .auth-right {
+    padding: 20px 15px;
+  }
+
   .auth-card {
-    padding: 28px 22px;
+    padding: 24px 18px;
 
     border-radius: 15px;
   }
 
-  .input-row {
-    grid-template-columns: 1fr;
+  .auth-heading {
+    margin-bottom: 20px;
   }
 
   .auth-heading h2 {
-    font-size: 25px;
+    font-size: 23px;
+  }
+
+  .auth-heading p {
+    font-size: 13px;
+  }
+
+  .input-row {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .input-group input,
+  .input-group select {
+    padding: 11px 12px;
+    font-size: 13px;
+  }
+
+  .auth-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+/* Extra Small Mobile Screens (380px and below) */
+@media (max-width: 380px) {
+
+  .auth-card {
+    padding: 20px 14px;
   }
 
   .brand-content h1 {
-    font-size: 30px;
+    font-size: 24px;
+  }
+
+  .auth-heading h2 {
+    font-size: 20px;
   }
 }
